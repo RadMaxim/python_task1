@@ -22,11 +22,11 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo -e "🚫 Push cancelled."
     exit 0
 fi
-
+echo ""
+echo "📦 Generating requirements.txt with all installed packages..."
+echo "   Using 'pip freeze'..."
+pip freeze > requirements.txt
 # Добавляем все изменения (включая новые файлы)
 git add .
-
 git commit -m "test"
-
-
 git push origin main
